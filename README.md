@@ -1,5 +1,5 @@
 # OfacSdn
-This gem provides the OFAC `sdn.xml` as an easy to use Ruby hash. This allows you to conduct your own search criteria in your own system.
+This gem provides the OFAC `sdn.xml` as an easy to use Ruby hash. This allows you to conduct your own search criteria on your own system.
 
 You can find the OFAC downloads here: 
 [OFAC Downloads](https://www.treasury.gov/ofac/downloads)
