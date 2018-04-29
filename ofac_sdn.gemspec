@@ -10,7 +10,7 @@ Gem::Specification.new do |spec|
   spec.authors       = ['Bryam Noguera']
   spec.email         = ['bryam@primetrust.com']
 
-  spec.summary       = 'returns a hash for the ofac sdn.xml list'
+  spec.summary       = 'Returns a hash for the OFAC sdn.xml'
   spec.homepage      = 'https://github.com/csebryam/ofac-sdn'
   spec.license       = 'MIT'
 
