@@ -40,6 +40,62 @@ count = OfacSdn::Read.record_count
 
 	* The SDN list is frequently updated. There is no predetermined timetable, but rather names are added or removed as necessary and appropriate.
 
+## Sample Conversion
+### Input: sdn.xml
+
+```
+<sdnList xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://tempuri.org/sdnList.xsd">
+  <publshInformation>
+    <Publish_Date>04/30/2018</Publish_Date>
+    <Record_Count>6305</Record_Count>
+  </publshInformation>
+  <sdnEntry>
+    <uid>36</uid>
+    <lastName>AEROCARIBBEAN AIRLINES</lastName>
+    <sdnType>Entity</sdnType>
+    <programList>
+      <program>CUBA</program>
+    </programList>
+    <akaList>
+      <aka>
+        <uid>12</uid>
+        <type>a.k.a.</type>
+        <category>strong</category>
+        <lastName>AERO-CARIBBEAN</lastName>
+      </aka>
+    </akaList>
+    <addressList>
+      <address>
+        <uid>25</uid>
+        <city>Havana</city>
+        <country>Cuba</country>
+      </address>
+    </addressList>
+  </sdnEntry>
+</sdnList>
+```
+
+### Output: sdn_hash
+
+<pre>
+{
+  sdnEntry: [
+    {<b>id: 36</b>, lastName: "AEROCARIBBEAN AIRLINES", sdnType: "Entity"}
+  ],
+  programList: [
+    {program: "CUBA", <b>sdn_id: 36</b>}
+  ],
+  akaList: [
+    {id: 12, <b>sdn_id: 36</b>, type: "a.k.a.", category: "strong", lastName: "AERO-CARIBBEAN"}
+  ],
+  addressList: [
+    {id: 25, <b>sdn_id: 36</b>, city: "Havana", country: "Cuba"}
+  ]
+}
+</pre>
+
+*Note: Associations for the `sdn_entry` are done for you. `id: 36` shows up as `sdn_id: 36` on all related lists.*
+
 ## Development
 
 After checking out the repo, run `bin/setup` to install dependencies. Then, run `rake test` to run the tests. You can also run `bin/console` for an interactive prompt that will allow you to experiment.

@@ -7,7 +7,7 @@ require 'ofac_sdn/version'
 require 'ofac_sdn/xsd'
 
 module OfacSdn
-  # OfacSdn::Read.new creates the SDN Hash document
+  # OfacSdn::Read.call creates the SDN Ruby Hash
   class Read
     class << self
       def call
